@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+                                         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+ <session-factory name="sessionFactory">
+  <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+  <property name="hibernate.connection.password">root</property>
+  <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/lilyleflorist</property>
+  <property name="hibernate.connection.username">root</property>
+  <property name="hibernate.default_schema">lilyleflorist</property>
+  <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+  <mapping class="com.lilyle.lotus.model.Customers" resource="com/lilyle/lotus/model/Customers.hbm.xml"/>
+  <mapping class="com.lilyle.lotus.model.Products" resource="com/lilyle/lotus/model/Products.hbm.xml"/>
+  <mapping class="com.lilyle.lotus.model.Stocks" resource="com/lilyle/lotus/model/Stocks.hbm.xml"/>
+ </session-factory>
+</hibernate-configuration>
