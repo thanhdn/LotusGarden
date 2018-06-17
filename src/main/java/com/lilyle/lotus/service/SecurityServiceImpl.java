@@ -10,10 +10,12 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.lilyle.lotus.interceptor.UserInfoDetectionInterceptor;
+
 @Service
 @Transactional
 public class SecurityServiceImpl implements SecurityService {
-
+    
     @Autowired
     private AuthenticationManager authenticationManager;
 
@@ -24,6 +26,7 @@ public class SecurityServiceImpl implements SecurityService {
 
     
     public String findLoggedInUsername() {
+        logger.debug("access findLoggedInUsername");
         Object userDetails = SecurityContextHolder.getContext().getAuthentication().getDetails();
         if (userDetails instanceof UserDetails) {
             return ((UserDetails)userDetails).getUsername();
@@ -33,6 +36,7 @@ public class SecurityServiceImpl implements SecurityService {
     }
 
     public void autologin(String username, String password) {
+        logger.debug("access autologin");
         UserDetails userDetails = userDetailsService.loadUserByUsername(username);
         UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken = new UsernamePasswordAuthenticationToken(userDetails, password, userDetails.getAuthorities());
 
