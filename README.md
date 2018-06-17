@@ -11,4 +11,10 @@
 10. Bấm vào project chọn run as, run bằng cái server mà các bác đã config trong eclipse. Cách config tomcat trên eclipse thì các bác tự làm nhé<br/>
 
 
-Project này tôi dùng để learning là chủ yếu nên nó chưa có gì cả ngoài một cái form ghẻ và login sử dụng spring sercutiry. Các bác muốn vọc angular js và spring boot thì qua cái SchoolSchedule với thằng SchoolCalendar
+Project này tôi dùng để learning là chủ yếu nên nó chưa có gì cả ngoài một cái form ghẻ và login sử dụng spring sercutiry. Các bác muốn vọc angular js và spring boot thì qua cái SchoolSchedule với thằng SchoolCalendar<br/>
+Tài khoản login <br/>
+user: 1<br/>
+password: 1<br/>
+Mật khẩu đc encrypt hẳn hoi đấy<br/>
+localhost:8080/LotusGarden/<br/>
+localhost:9090/LotusGarden/loginv
