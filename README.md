@@ -12,7 +12,7 @@
 
 
 Project này tôi dùng để learning là chủ yếu nên nó chưa có gì cả ngoài một cái form ghẻ và login sử dụng spring sercutiry. Các bác muốn vọc angular js và spring boot thì qua cái SchoolSchedule với thằng SchoolCalendar<br/>
-Tài khoản login <br/>
+Tài khoản login vào lotus garden<br/>
 user: 1<br/>
 password: 1<br/>
 Mật khẩu đc encrypt hẳn hoi đấy<br/>
