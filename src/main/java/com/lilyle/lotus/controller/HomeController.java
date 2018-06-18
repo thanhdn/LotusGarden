@@ -11,9 +11,13 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.lilyle.lotus.model.Customers;
 import com.lilyle.lotus.service.CustomerService;
+import com.lilyle.lotus.validator.CustomerValidator;
 
 @Controller
 public class HomeController {
+    
+    @Autowired
+    CustomerValidator validator;
     
     @Autowired
     CustomerService customerService;
@@ -33,9 +37,12 @@ public class HomeController {
     }
     
     @RequestMapping(value = "/add-customer", method = RequestMethod.POST)
-    public ModelAndView doAddEmployee(@ModelAttribute("customer") Customers customer, BindingResult result) {
+    public String doAddEmployee(@ModelAttribute("customer") Customers customer, BindingResult result, Model model) {
+        validator.validate(customer, result);
+        if(result.hasErrors()) {
+            return "index";
+        }
         customerService.save(customer);
-        ModelAndView model = new ModelAndView("redirect:/view-customer");
-        return model;
+        return "redirect:/view-customer";
     }
 }

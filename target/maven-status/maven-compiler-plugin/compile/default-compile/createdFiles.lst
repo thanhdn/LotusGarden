@@ -7,6 +7,7 @@ com\lilyle\lotus\service\SecurityServiceImpl.class
 com\lilyle\lotus\dao\CustomerDAO.class
 com\lilyle\lotus\service\UserDetailsServiceImpl.class
 com\lilyle\lotus\model\Customers.class
+com\lilyle\lotus\validator\CustomerValidator.class
 com\lilyle\lotus\model\Products.class
 com\lilyle\lotus\controller\HomeController.class
 com\lilyle\lotus\interceptor\UserInfoDetectionInterceptor.class

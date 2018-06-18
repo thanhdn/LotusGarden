@@ -10,7 +10,15 @@
     <mvc:annotation-driven />
     <mvc:resources mapping="/resource/**" location="/resource/assets/"
         cache-period="31556926" />
-    <!-- <context:component-scan base-package="com.lilyle.lotus" /> -->
+
+    <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+        <property name="basenames">
+            <list>
+                <value>classpath:validation</value>
+            </list>
+        </property>
+    </bean>
+
     <bean
         class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix">
