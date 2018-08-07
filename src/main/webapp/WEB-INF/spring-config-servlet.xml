@@ -8,10 +8,20 @@
     http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
     <context:annotation-config />
     <mvc:annotation-driven />
+
+    <bean id="bean1" class="com.lilyle.lotus.bean.Bean1">
+        <constructor-arg ref="bean2"></constructor-arg>
+    </bean>
+
+    <bean id="bean2" class="com.lilyle.lotus.bean.Bean2">
+        <property name="hello" value="em dep lam"></property>
+    </bean>
+
     <mvc:resources mapping="/resource/**" location="/resource/assets/"
         cache-period="31556926" />
 
-    <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+    <bean id="messageSource"
+        class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
         <property name="basenames">
             <list>
                 <value>classpath:validation</value>

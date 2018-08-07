@@ -1,10 +1,14 @@
 package com.lilyle.lotus.model;
 
+import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 // Generated Jun 5, 2018 2:55:00 PM by Hibernate Tools 5.1.7.Final
@@ -14,11 +18,12 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "Customers")
+/*@Cache(usage = CacheConcurrencyStrategy.READ_WRITE)*/
 public class Customers {
     
     @Id
     @Column(name = "customerId", nullable = false)
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long customerId;
     
     @Column(name = "customerName")
@@ -42,6 +47,9 @@ public class Customers {
     @Column(name = "buyingNumber")
     private int buyingNumber;
 
+    @OneToMany(orphanRemoval=true, cascade=CascadeType.REMOVE)
+    private Set<Stocks> stocks;
+    
     public Customers() {
     }
 
